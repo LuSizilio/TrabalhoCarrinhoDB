@@ -1,0 +1,38 @@
+create table Produtos(
+	id int identity,
+	cod varchar(8) not null,
+	descricao varchar(140) not null,
+	valorUni decimal not null,
+	primary key(id)
+)
+
+create table Venda (
+	id int identity,
+	dataVenda Date not null,
+	nomeCliente varchar(50) not null,
+	valorTotal decimal not null,
+	primary key(id)
+)
+
+create table ItensVenda (
+	id int identity not null,
+	idVenda int not null,
+	codProd varchar(8) not null,
+	quant int not null,
+	valorUni decimal not null,
+	valorTotal decimal not null,
+	primary key(id)
+)
+
+insert into Produtos values('SFDHF80D', 'Smartphone Samsung J5 Prime DUOS - 32 GB - Ouro branco - GSM', 699.99)
+insert into Produtos values('ZFGHF91F', 'Smartphone Samsung J7 Prime DUOS - 64 GB - Ouro branco - GSM', 1399.99)
+select * from Produtos
+
+Select top 1 * from Produtos order by id desc
+
+
+
+SELECT getDate()
+select * from Venda
+select * from ItensVenda
+SELECT ident_current('Venda')
